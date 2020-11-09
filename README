@@ -1,1 +1,7 @@
 the original code of bootloader can be found from: https://github.com/RIOT-OS/RIOT/tree/master/sys/riotboot and https://github.com/RIOT-OS/RIOT/tree/master/sys/include/riotboot
+
+[2020-11-09] how to transform int to uint32:
+```
+val int_to_uint32 : n:int -> Tot (b:UInt32.t{UInt32.v b = n % pow2 32})
+let int_to_uint32 n = UInt32.uint_to_t (n %pow2 32) 
+```
